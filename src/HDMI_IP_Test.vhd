@@ -5,8 +5,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
  
 
- --Hey Leslie, any questions don't hesitate! I'm no VHDL expert so apologies for the state of the code haha
- 
+
  
  entity Main is
 	Port(
@@ -380,14 +379,9 @@ VideoGenerator: VideoGen
 
 OSER10RESET<=Button1;
 
-
-
-
 Red<=GenRed when HDMIActiveArea='1' else "00000000";
 Green<=GenGreen when HDMIActiveArea='1' else "00000000";
 Blue<=GenBlue when HDMIActiveArea='1' else "00000000";
-
-
 
 HDMI0: DVI_TX_Top
 	port map (
@@ -414,12 +408,9 @@ PLLClk: Gowin_rPLL --use the IP tool to set up the clock, 27mhz input, 250mhz ou
         clkin => clkin_i
     );
 
---HDMI read from ram code 
-
-
 
 process(clk25mhz) --Very similar to VGA timings, front porch, back porch, video area. You can mess with the clock and resolution and push out up to a 720p signal with this chip
-begin --theres some scaling stuff in here which you can cut out (subpixel etc), it was to scale a 160x144 image 3x
+begin --
 
     if rising_edge(clk25mhz) then
 
