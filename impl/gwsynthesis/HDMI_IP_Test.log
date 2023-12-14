@@ -1,0 +1,103 @@
+GowinSynthesis start
+Running parser ...
+Analyzing VHDL file 'C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\BASIC20\VZROM.vhd'
+Analyzing entity 'vzrom'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\BASIC20\VZROM.vhd":13)
+Analyzing architecture 'behavioral'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\BASIC20\VZROM.vhd":24)
+Analyzing VHDL file 'C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\CHRROM\CHRROM.vhd'
+Analyzing entity 'chrrom'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\CHRROM\CHRROM.vhd":13)
+Analyzing architecture 'behavioral'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\CHRROM\CHRROM.vhd":24)
+Analyzing VHDL file 'C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd'
+Analyzing entity 'main'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":11)
+Analyzing architecture 'behavioral'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":25)
+WARN  (EX4557) : Actual for formal port 'oce' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":271)
+WARN  (EX4557) : Actual for formal port 'reset' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":273)
+WARN  (EX4557) : Actual for formal port 'reset' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":284)
+WARN  (EX4557) : Actual for formal port 'ocea' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":293)
+WARN  (EX4557) : Actual for formal port 'cea' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":294)
+WARN  (EX4557) : Actual for formal port 'reseta' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":295)
+WARN  (EX4557) : Actual for formal port 'wrea' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":296)
+WARN  (EX4557) : Actual for formal port 'resetb' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":300)
+WARN  (EX4557) : Actual for formal port 'oce' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":314)
+WARN  (EX4557) : Actual for formal port 'ce' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":315)
+WARN  (EX4557) : Actual for formal port 'reset' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":316)
+WARN  (EX4557) : Actual for formal port 'wre' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":317)
+Analyzing VHDL file 'C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VZ_VRAM\VZ_VRAM.vhd'
+Analyzing entity 'vz_vram'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VZ_VRAM\VZ_VRAM.vhd":13)
+Analyzing architecture 'behavioral'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VZ_VRAM\VZ_VRAM.vhd":34)
+Analyzing VHDL file 'C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VZ_WRAM\VZ_WRAM.vhd'
+Analyzing entity 'vz_wram'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VZ_WRAM\VZ_WRAM.vhd":13)
+Analyzing architecture 'behavioral'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VZ_WRAM\VZ_WRAM.vhd":26)
+Analyzing VHDL file 'C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VideoGen.vhd'
+Analyzing entity 'videogen'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VideoGen.vhd":7)
+Analyzing architecture 'behavioral'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VideoGen.vhd":34)
+Analyzing VHDL file 'C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\dvi_tx\dvi_tx.vhd'
+Analyzing entity '**'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\dvi_tx\dvi_tx.vhd":0)
+Analyzing architecture '**'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\dvi_tx\dvi_tx.vhd":0)
+Analyzing entity '**'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\dvi_tx\dvi_tx.vhd":0)
+Analyzing architecture '**'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\dvi_tx\dvi_tx.vhd":0)
+Analyzing entity '**'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\dvi_tx\dvi_tx.vhd":0)
+Analyzing architecture '**'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\dvi_tx\dvi_tx.vhd":0)
+Analyzing entity '**'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\dvi_tx\dvi_tx.vhd":0)
+Analyzing architecture '**'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\dvi_tx\dvi_tx.vhd":0)
+Analyzing entity '**'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\dvi_tx\dvi_tx.vhd":0)
+Analyzing architecture '**'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\dvi_tx\dvi_tx.vhd":0)
+Analyzing VHDL file 'C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\gowin_rpll\gowin_rpll.vhd'
+Analyzing entity 'gowin_rpll'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\gowin_rpll\gowin_rpll.vhd":13)
+Analyzing architecture 'behavioral'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\gowin_rpll\gowin_rpll.vhd":21)
+Analyzing VHDL file 'C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_Pack.vhd'
+Analyzing package 't80_pack'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_Pack.vhd":51)
+Analyzing VHDL file 'C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80.vhd'
+Analyzing entity 't80'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80.vhd":75)
+Analyzing architecture 'rtl'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80.vhd":115)
+Analyzing VHDL file 'C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_ALU.vhd'
+Analyzing entity 't80_alu'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_ALU.vhd":62)
+Analyzing architecture 'rtl'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_ALU.vhd":88)
+Analyzing VHDL file 'C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_MCode.vhd'
+Analyzing entity 't80_mcode'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_MCode.vhd":68)
+Analyzing architecture 'rtl'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_MCode.vhd":137)
+Analyzing VHDL file 'C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_Reg.vhd'
+Analyzing entity 't80_reg'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_Reg.vhd":56)
+Analyzing architecture 'rtl'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_Reg.vhd":76)
+Analyzing VHDL file 'C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80se.vhd'
+Analyzing entity 't80se'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80se.vhd":67)
+Analyzing architecture 'rtl'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80se.vhd":95)
+Processing 'Main(Behavioral)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":11)
+Processing 'T80se(rtl)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80se.vhd":67)
+Processing 'T80(iowait=1)(rtl)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80.vhd":75)
+Processing 'T80_MCode(rtl)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_MCode.vhd":68)
+Processing 'T80_ALU(rtl)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_ALU.vhd":62)
+Processing 'T80_Reg(rtl)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_Reg.vhd":56)
+Extracting RAM for identifier 'RegsH'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_Reg.vhd":79)
+Extracting RAM for identifier 'RegsL'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_Reg.vhd":80)
+Processing 'VZROM(Behavioral)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\BASIC20\VZROM.vhd":13)
+Processing 'CHRROM(Behavioral)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\CHRROM\CHRROM.vhd":13)
+Processing 'VZ_VRAM(Behavioral)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VZ_VRAM\VZ_VRAM.vhd":13)
+Processing 'VZ_WRAM(Behavioral)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VZ_WRAM\VZ_WRAM.vhd":13)
+Processing 'VideoGen(Behavioral)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VideoGen.vhd":7)
+Processing '**(**)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\dvi_tx\dvi_tx.vhd":0)
+Processing '**(**)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\dvi_tx\dvi_tx.vhd":0)
+Processing '**(**)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\dvi_tx\dvi_tx.vhd":0)
+Processing '**(**)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\dvi_tx\dvi_tx.vhd":0)
+Processing '**(**)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\dvi_tx\dvi_tx.vhd":0)
+Processing 'Gowin_rPLL(Behavioral)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\gowin_rpll\gowin_rpll.vhd":13)
+NOTE  (EX0101) : Current top module is "Main"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\impl\gwsynthesis\HDMI_IP_Test.vg" completed
+WARN  (CK3000) : Can't calculate clocks' relationship between: "LedPrescaler[2]_3" and "PLLClk/rpll_inst/CLKOUTD.default_gen_clk"
+[100%] Generate report file "C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\impl\gwsynthesis\HDMI_IP_Test_syn.rpt.html" completed
+GowinSynthesis finish

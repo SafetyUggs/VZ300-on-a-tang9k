@@ -1,0 +1,15 @@
+[General]
+ipc_version=4
+file=CHRROM
+module=CHRROM
+target_device=gw1nr9c-004
+type=ram_prom
+version=1.0
+
+[Config]
+DEPTH=4096
+LANG=1
+MEM_FILE=../CHRROM.mi
+READ=0
+RESET_MODE=true
+WIDTH=8

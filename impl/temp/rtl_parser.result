@@ -1,0 +1,112 @@
+[
+ {
+  "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
+  "InstLine" : 11,
+  "InstName" : "Main",
+  "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
+  "ModuleLine" : 11,
+  "ModuleName" : "Main",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
+    "InstLine" : 392,
+    "InstName" : "HDMI0",
+    "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/dvi_tx/dvi_tx.vhd",
+    "ModuleLine" : 1,
+    "ModuleName" : "DVI_TX_Top"
+   },
+   {
+    "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
+    "InstLine" : 243,
+    "InstName" : "CPU",
+    "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/t80/T80se.vhd",
+    "ModuleLine" : 67,
+    "ModuleName" : "T80se",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/t80/T80se.vhd",
+      "InstLine" : 107,
+      "InstName" : "u0",
+      "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/t80/T80.vhd",
+      "ModuleLine" : 75,
+      "ModuleName" : "T80",
+      "SubInsts" : [
+       {
+        "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/t80/T80.vhd",
+        "InstLine" : 244,
+        "InstName" : "mcode",
+        "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/t80/T80_MCode.vhd",
+        "ModuleLine" : 68,
+        "ModuleName" : "T80_MCode"
+       },
+       {
+        "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/t80/T80.vhd",
+        "InstLine" : 309,
+        "InstName" : "alu",
+        "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/t80/T80_ALU.vhd",
+        "ModuleLine" : 62,
+        "ModuleName" : "T80_ALU"
+       },
+       {
+        "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/t80/T80.vhd",
+        "InstLine" : 819,
+        "InstName" : "Regs",
+        "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/t80/T80_Reg.vhd",
+        "ModuleLine" : 56,
+        "ModuleName" : "T80_Reg"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
+    "InstLine" : 267,
+    "InstName" : "VZVROM",
+    "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/BASIC20/VZROM.vhd",
+    "ModuleLine" : 13,
+    "ModuleName" : "VZROM"
+   },
+   {
+    "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
+    "InstLine" : 278,
+    "InstName" : "CHRGENROM",
+    "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/CHRROM/CHRROM.vhd",
+    "ModuleLine" : 13,
+    "ModuleName" : "CHRROM"
+   },
+   {
+    "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
+    "InstLine" : 288,
+    "InstName" : "VZVRAM",
+    "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/VZ_VRAM/VZ_VRAM.vhd",
+    "ModuleLine" : 13,
+    "ModuleName" : "VZ_VRAM"
+   },
+   {
+    "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
+    "InstLine" : 310,
+    "InstName" : "VZWRAM",
+    "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/VZ_WRAM/VZ_WRAM.vhd",
+    "ModuleLine" : 13,
+    "ModuleName" : "VZ_WRAM"
+   },
+   {
+    "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
+    "InstLine" : 358,
+    "InstName" : "VideoGenerator",
+    "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/VideoGen.vhd",
+    "ModuleLine" : 7,
+    "ModuleName" : "VideoGen"
+   },
+   {
+    "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
+    "InstLine" : 410,
+    "InstName" : "PLLClk",
+    "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/gowin_rpll/gowin_rpll.vhd",
+    "ModuleLine" : 13,
+    "ModuleName" : "Gowin_rPLL"
+   }
+  ]
+ }
+]

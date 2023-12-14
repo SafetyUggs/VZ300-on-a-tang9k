@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW1NR-9C" package="QFN88P" speed="6" partNumber="GW1NR-LV9QN88PC6/I5"/>
+    <FileList>
+        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\BASIC20\VZROM.vhd" type="vhdl"/>
+        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\CHRROM\CHRROM.vhd" type="vhdl"/>
+        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd" type="vhdl"/>
+        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VZ_VRAM\VZ_VRAM.vhd" type="vhdl"/>
+        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VZ_WRAM\VZ_WRAM.vhd" type="vhdl"/>
+        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VideoGen.vhd" type="vhdl"/>
+        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\dvi_tx\dvi_tx.vhd" type="vhdl"/>
+        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\gowin_rpll\gowin_rpll.vhd" type="vhdl"/>
+        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80.vhd" type="vhdl"/>
+        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_ALU.vhd" type="vhdl"/>
+        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_MCode.vhd" type="vhdl"/>
+        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_Pack.vhd" type="vhdl"/>
+        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_Reg.vhd" type="vhdl"/>
+        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80se.vhd" type="vhdl"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="0"/>
+        <Option type="looplimit" value="2000"/>
+        <Option type="output_file" value="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\impl\gwsynthesis\HDMI_IP_Test.vg"/>
+        <Option type="print_all_synthesis_warning" value="0"/>
+        <Option type="ram_rw_check" value="1"/>
+        <Option type="top_module" value="Main"/>
+        <Option type="verilog_language" value="verilog-2001"/>
+        <Option type="vhdl_language" value="vhdl-1993"/>
+    </OptionList>
+</Project>

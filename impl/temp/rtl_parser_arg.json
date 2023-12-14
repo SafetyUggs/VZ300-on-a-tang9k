@@ -1,0 +1,83 @@
+{
+ "Device" : "GW1NR-9C",
+ "Files" : [
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/BASIC20/VZROM.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/CHRROM/CHRROM.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/VZ_VRAM/VZ_VRAM.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/VZ_WRAM/VZ_WRAM.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/VideoGen.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/dvi_tx/dvi_tx.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/gowin_rpll/gowin_rpll.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/t80/T80.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/t80/T80_ALU.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/t80/T80_MCode.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/t80/T80_Pack.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/t80/T80_Reg.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/t80/T80se.vhd",
+   "Type" : "vhdl"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/impl/temp/rtl_parser.result",
+ "Top" : "Main",
+ "VerilogStd" : "verilog_2001",
+ "VhdlStd" : "vhdl_93"
+}
