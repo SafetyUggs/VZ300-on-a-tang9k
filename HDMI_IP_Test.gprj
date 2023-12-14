@@ -12,6 +12,7 @@
         <File path="src/VZ_WRAM/VZ_WRAM.vhd" type="file.vhdl" enable="1"/>
         <File path="src/VideoGen.vhd" type="file.vhdl" enable="1"/>
         <File path="src/dvi_tx/dvi_tx.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/gowin_flash_controller/gowin_flash_controller.vhd" type="file.vhdl" enable="1"/>
         <File path="src/gowin_rpll/gowin_rpll.vhd" type="file.vhdl" enable="1"/>
         <File path="src/t80/T80.vhd" type="file.vhdl" enable="1"/>
         <File path="src/t80/T80_ALU.vhd" type="file.vhdl" enable="1"/>

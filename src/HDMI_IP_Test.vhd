@@ -59,7 +59,8 @@ signal cpu_clk : std_logic;
 signal VZROM_CE : std_logic;
 signal VZWRAM_CE : std_logic;
 signal VZVRAM_CE : std_logic;
-
+signal Keyboard_CE : std_logic;
+signal KeyByteBuffer : std_logic_vector(7 downto 0):="11111111";
 signal VZROM_Address_In : std_logic_vector(13 downto 0);
 
 
@@ -233,6 +234,23 @@ component VideoGen is
     );
 end component;
 
+component Gowin_Flash_Controller_Top
+	port (
+		wdata_i: in std_logic_vector(31 downto 0);
+		wyaddr_i: in std_logic_vector(5 downto 0);
+		wxaddr_i: in std_logic_vector(8 downto 0);
+		erase_en_i: in std_logic;
+		done_flag_o: out std_logic;
+		start_flag_i: in std_logic;
+		clk_i: in std_logic;
+		nrst_i: in std_logic;
+		rdata_o: out std_logic_vector(31 downto 0);
+		wr_en_i: in std_logic
+	);
+end component;
+
+
+
 begin
 SysReset<=Button1;
 
@@ -264,7 +282,7 @@ CPU: T80se
 
 
 VZVROM: VZROM
-    port map (
+   port map (
         dout => VZROM_Data_Out,
         clk => cpu_clk,
         oce => not VZROM_CE,
@@ -272,6 +290,23 @@ VZVROM: VZROM
         reset => not SysReset,
         ad => CPU_A(13 downto 0)
     );
+
+
+--ROM_in_flash: Gowin_Flash_Controller_Top  --This will work, but you need to parse the basic ROM to convert it to a .fi compatible file.
+--	port map (
+--		wdata_i => "00000000000000000000000000000000",
+--		wyaddr_i => CPU_A(14 downto 9),
+--		wxaddr_i => CPU_A(8 downto 0),
+--		erase_en_i => '0',
+--		done_flag_o => open,
+--		start_flag_i => '0',
+--		clk_i => cpu_clk,
+--		nrst_i => '0',
+--		rdata_o(7 downto 0) => VZROM_Data_Out,
+--		wr_en_i => '0'
+--	);
+
+
 
 
 CHRGENROM : CHRROM
@@ -318,11 +353,13 @@ VZWRAM: VZ_WRAM
         din => CPU_DO
     );
 
-LEDs<=LED_Latch(5 downto 0) xor "111111";
-
+LEDs(5 downto 1)<= "11111";
+LEDs(0)<=CPU_INT_n;
 VZROM_CE<='0' when CPU_A(15 downto 0) < "0100000000000000" else '1';
 VZWRAM_CE<='0' when (CPU_A(15 downto 0) >= "0111100000000000") and (CPU_A(15 downto 0) < "1011100000000000") else '1'; --7800 b800
 VZVRAM_CE<='0' when (CPU_A(15 downto 0) >= "0111000000000000") and (CPU_A(15 downto 0) < "0111100000000000") else '1'; --7000 to 7800 
+
+Keyboard_CE <= '0' when (CPU_A(15 downto 11) >= "01101")  else '1'; --7000 to 7800 
 
 LED_WR<='0' when (CPU_A(15 downto 0) = "0111000001100000") and (CPU_WR_n='0') and CPU_MREQ_n='0' else '1'; --7060
 
@@ -334,15 +371,19 @@ begin
 end process;
 
 
-process (clk_cpu,CPU_MREQ_n,VZROM_CE,VZVRAM_CE,VZWRAM_CE,VZWRAM_Data_Out,VZVRAM_Data_Out,VZROM_Data_Out)
+process (clk_cpu,CPU_MREQ_n,VZROM_CE,VZVRAM_CE,VZWRAM_CE,Keyboard_CE,VZWRAM_Data_Out,VZVRAM_Data_Out,VZROM_Data_Out)
 begin
-    if CPU_MREQ_n='0' then  
+    if CPU_MREQ_n='0' and CPU_RD_n='0' then  
         if VZROM_CE='0' then
             CPU_DI<=VZROM_Data_Out;
         elsif VZVRAM_CE='0' then
             CPU_DI<=VZVRAM_Data_Out;
         elsif VZWRAM_CE='0' then
             CPU_DI<=VZWRAM_Data_Out;
+        elsif VZWRAM_CE='0' then
+            CPU_DI<=VZWRAM_Data_Out;
+        elsif Keyboard_CE='0' then
+            CPU_DI<=KeyByteBuffer;
         else
             CPU_DI<="ZZZZZZZZ";
         end if;

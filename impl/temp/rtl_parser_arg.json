@@ -70,6 +70,11 @@
    "Library" : "work",
    "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/t80/T80se.vhd",
    "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/gowin_flash_controller/gowin_flash_controller.vhd",
+   "Type" : "vhdl"
   }
  ],
  "IncludePath" : [

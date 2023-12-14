@@ -1,0 +1,13 @@
+[General]
+ipc_version=4
+file=gowin_flash_controller
+module=Gowin_Flash_Controller_Top
+target_device=gw1nr9c-004
+type=Gowin_Flash_Controller
+version=1.0
+
+[Config]
+DISABLE_IO_INSERTION=true
+INTERFACE=Register Interface
+LANG=1
+Synthesis_tool=GowinSynthesis

@@ -61,7 +61,7 @@ Red<="00000000";
 Green<=PixelValue & PixelValue & "000000";
 Blue<="00000000";
 
-Interrupt<='1' ;
+Interrupt<='0' when  Ycounter=1 else '1' ;
 
 process (PixelClock)
 begin

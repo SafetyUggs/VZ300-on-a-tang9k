@@ -1,0 +1,41 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller.v'
+Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller_top.v'
+Analyzing included file 'config.v'("C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller_top.v":25)
+Back to file 'C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller_top.v'("C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller_top.v":25)
+Analyzing included file 'gowin_flash_controller_name.v'("C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller_top.v":26)
+Back to file 'C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller_top.v'("C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller_top.v":26)
+Compiling module 'Gowin_Flash_Controller_Top'("C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller_top.v":28)
+Compiling module '**'("C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller.v":0)
+Compiling module '**'("C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller.v":0)
+WARN  (EX3791) : Expression size ** truncated to fit in target size **("C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller.v":0)
+Compiling module '**'("C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller.v":0)
+WARN  (EX3791) : Expression size ** truncated to fit in target size **("C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller.v":0)
+Compiling module '**'("C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller.v":0)
+WARN  (EX3791) : Expression size ** truncated to fit in target size **("C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller.v":0)
+Compiling module '**'("C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller.v":0)
+WARN  (EX1998) : Net '**' does not have a driver("C:\Gowin\Gowin_V1.9.9Beta-4_Education\IDE\ipcore\FlashController\data\gowin_flash_controller.v":0)
+NOTE  (EX0101) : Current top module is "Gowin_Flash_Controller_Top"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\gowin_flash_controller\temp\FlashController\gowin_flash_controller.vg" completed
+[98%] Generate netlist file "C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\gowin_flash_controller\temp\FlashController\gowin_flash_controller.vhg" completed
+Generate netlist file "C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\gowin_flash_controller\temp\FlashController\gowin_flash_controller.vho" completed
+Generate template file "C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\gowin_flash_controller\temp\FlashController\gowin_flash_controller_tmp.vhd" completed
+[100%] Generate report file "C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\gowin_flash_controller\temp\FlashController\gowin_flash_controller_syn.rpt.html" completed
+GowinSynthesis finish

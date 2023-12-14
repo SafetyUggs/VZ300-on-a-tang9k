@@ -18,6 +18,7 @@
         <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_Pack.vhd" type="vhdl"/>
         <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_Reg.vhd" type="vhdl"/>
         <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80se.vhd" type="vhdl"/>
+        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\gowin_flash_controller\gowin_flash_controller.vhd" type="vhdl"/>
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>
