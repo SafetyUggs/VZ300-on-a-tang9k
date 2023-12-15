@@ -1,0 +1,3 @@
+`define UART_MASTER_SYSCLK 2.7e+07
+`define UART_BAUD_RATE 9600
+`define LUT_BASED

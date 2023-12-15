@@ -8,6 +8,7 @@
         <File path="src/BASIC20/VZROM.vhd" type="file.vhdl" enable="1"/>
         <File path="src/CHRROM/CHRROM.vhd" type="file.vhdl" enable="1"/>
         <File path="src/HDMI_IP_Test.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/Keyboard.vhd" type="file.vhdl" enable="1"/>
         <File path="src/VZ_VRAM/VZ_VRAM.vhd" type="file.vhdl" enable="1"/>
         <File path="src/VZ_WRAM/VZ_WRAM.vhd" type="file.vhdl" enable="1"/>
         <File path="src/VideoGen.vhd" type="file.vhdl" enable="1"/>
@@ -20,6 +21,7 @@
         <File path="src/t80/T80_Pack.vhd" type="file.vhdl" enable="1"/>
         <File path="src/t80/T80_Reg.vhd" type="file.vhdl" enable="1"/>
         <File path="src/t80/T80se.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/uart_master/uart_master.vhd" type="file.vhdl" enable="1"/>
         <File path="src/HDMI_IP_Test.cst" type="file.cst" enable="1"/>
         <File path="src/HDMI_IP_Test.sdc" type="file.sdc" enable="1"/>
     </FileList>

@@ -13,6 +13,11 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 		clkin_i    : in  std_logic; --27mhz on board xtal oscillator
         Button1 : in std_logic;
         LEDs : out  std_logic_vector(5 downto 0);
+
+        SerialIn : in std_logic;
+        SerialOut : out std_logic;
+
+
         O_tmds_clk_p_o: out  std_logic;
         O_tmds_clk_n_o: out  std_logic;
         O_tmds_data_p_o: out   std_logic_vector(2 downto 0);
@@ -60,7 +65,7 @@ signal VZROM_CE : std_logic;
 signal VZWRAM_CE : std_logic;
 signal VZVRAM_CE : std_logic;
 signal Keyboard_CE : std_logic;
-signal KeyByteBuffer : std_logic_vector(7 downto 0):="11111111";
+signal KeyByteBuffer : std_logic_vector(5 downto 0):="111111";
 signal VZROM_Address_In : std_logic_vector(13 downto 0);
 
 
@@ -234,6 +239,24 @@ component VideoGen is
     );
 end component;
 
+
+component Keyboard is
+
+    port (
+    --Inputs
+        UART_Reset : in std_logic;
+        VDP_Interrupt : in std_logic;
+        CPU_Address : in std_logic_vector(15 downto 0);
+        CLK25MHZ : in std_logic;
+
+        Serial_RX : in std_logic;
+    --Outputs\
+        KeyData : out std_logic_vector(5 downto 0);
+        Serial_TX : out std_logic
+        
+    );
+end component;
+
 component Gowin_Flash_Controller_Top
 	port (
 		wdata_i: in std_logic_vector(31 downto 0);
@@ -252,6 +275,8 @@ end component;
 
 
 begin
+SerialOut<=SerialIn;
+
 SysReset<=Button1;
 
 cpu_clk<=LedPrescaler(2);
@@ -353,8 +378,7 @@ VZWRAM: VZ_WRAM
         din => CPU_DO
     );
 
-LEDs(5 downto 1)<= "11111";
-LEDs(0)<=CPU_INT_n;
+
 VZROM_CE<='0' when CPU_A(15 downto 0) < "0100000000000000" else '1';
 VZWRAM_CE<='0' when (CPU_A(15 downto 0) >= "0111100000000000") and (CPU_A(15 downto 0) < "1011100000000000") else '1'; --7800 b800
 VZVRAM_CE<='0' when (CPU_A(15 downto 0) >= "0111000000000000") and (CPU_A(15 downto 0) < "0111100000000000") else '1'; --7000 to 7800 
@@ -383,7 +407,7 @@ begin
         elsif VZWRAM_CE='0' then
             CPU_DI<=VZWRAM_Data_Out;
         elsif Keyboard_CE='0' then
-            CPU_DI<=KeyByteBuffer;
+            CPU_DI<="11"& KeyByteBuffer;
         else
             CPU_DI<="ZZZZZZZZ";
         end if;
@@ -417,6 +441,23 @@ VideoGenerator: VideoGen
     );
 
 
+
+SerialKeyboard : keyboard
+   port map (
+
+    --Inputs
+        UART_Reset => SysReset,
+        VDP_Interrupt => CPU_INT_n,
+        CPU_Address => CPU_A,
+        CLK25MHZ =>CLK25MHZ,
+        Serial_RX => SerialIn,
+    --Outputs\
+        KeyData =>KeyByteBuffer,
+       Serial_TX => open
+);
+
+LEDs(5 downto 0)<= KeyByteBuffer(5 downto 0);
+--LEDs(0)<=CPU_INT_n;
 
 OSER10RESET<=Button1;
 
