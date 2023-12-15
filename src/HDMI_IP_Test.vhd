@@ -279,7 +279,7 @@ SerialOut<=SerialIn;
 
 SysReset<=Button1;
 
-cpu_clk<=LedPrescaler(2);
+cpu_clk<=LedPrescaler(2); --CHANGE YOUR CPU CLOCK SPEED HERE. 
 
 
 CPU: T80se
@@ -379,13 +379,11 @@ VZWRAM: VZ_WRAM
     );
 
 
-VZROM_CE<='0' when CPU_A(15 downto 0) < "0100000000000000" else '1';
-VZWRAM_CE<='0' when (CPU_A(15 downto 0) >= "0111100000000000") and (CPU_A(15 downto 0) < "1011100000000000") else '1'; --7800 b800
-VZVRAM_CE<='0' when (CPU_A(15 downto 0) >= "0111000000000000") and (CPU_A(15 downto 0) < "0111100000000000") else '1'; --7000 to 7800 
-
-Keyboard_CE <= '0' when (CPU_A(15 downto 11) >= "01101")  else '1'; --7000 to 7800 
-
-LED_WR<='0' when (CPU_A(7 downto 0) = "10000000") and (CPU_WR_n='0') and CPU_IOREQ_n='0' else '1'; --Port 0x80 = LEDs
+VZROM_CE<=NOT CPU_IOREQ_n when CPU_A(15 downto 0) < X"4000" else '1';
+VZWRAM_CE<=NOT CPU_IOREQ_n when (CPU_A(15 downto 0) >= X"7800") and (CPU_A(15 downto 0) < X"B800") else '1'; --7800 b800
+VZVRAM_CE<=NOT CPU_IOREQ_n when (CPU_A(15 downto 0) >= X"7000") and (CPU_A(15 downto 0) < X"7800") else '1'; --7000 to 7800 
+Keyboard_CE <= NOT CPU_IOREQ_n when (CPU_A(15 downto 11) >= "01101")  else '1'; --7000 to 7800 
+LED_WR<='0' when (CPU_A(7 downto 0) = X"80") and (CPU_WR_n='0') and CPU_IOREQ_n='0' else '1'; --Port 0x80 = LEDs
 
 process (LED_WR)
 begin
