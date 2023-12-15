@@ -87,7 +87,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Fri Dec 15 11:40:40 2023
+<td>Fri Dec 15 12:30:05 2023
 </td>
 </tr>
 <tr>
@@ -100,7 +100,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <table class="summary_table">
 <tr>
 <td class="label">Total Power (mW)</td>
-<td>27.646</td>
+<td>27.902</td>
 </tr>
 <tr>
 <td class="label">Quiescent Power (mW)</td>
@@ -108,7 +108,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Dynamic Power (mW)</td>
-<td>9.334</td>
+<td>9.589</td>
 </tr>
 <tr>
 <td class="label">Psram Power (mW)</td>
@@ -119,7 +119,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <table class="summary_table">
 <tr>
 <td class="label">Junction Temperature</td>
-<td>25.570</td>
+<td>25.576</td>
 </tr>
 <tr>
 <td class="label">Theta JA</td>
@@ -127,7 +127,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Max Allowed Ambient Temperature</td>
-<td>84.430</td>
+<td>84.424</td>
 </tr>
 </table>
 <h2><a name="Configure_Info">Configure Information:</a></h2>
@@ -196,23 +196,23 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td>VCC</td>
 <td>1.200</td>
-<td>7.522</td>
+<td>7.626</td>
 <td>3.079</td>
-<td>12.721</td>
+<td>12.845</td>
 </tr>
 <tr>
 <td>VCCX</td>
 <td>2.500</td>
-<td>0.064</td>
+<td>0.095</td>
 <td>3.788</td>
-<td>9.630</td>
+<td>9.707</td>
 </tr>
 <tr>
 <td>VCCIO18</td>
 <td>1.800</td>
-<td>0.043</td>
+<td>0.073</td>
 <td>0.978</td>
-<td>1.839</td>
+<td>1.893</td>
 </tr>
 <tr>
 <td>VCCIO33</td>
@@ -233,15 +233,15 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td>Logic</td>
-<td>0.496</td>
+<td>0.577</td>
 <td>NA</td>
-<td>5.781</td>
+<td>6.953</td>
 </tr>
 <tr>
 <td>IO</td>
-<td>6.119
+<td>6.287
 <td>5.735
-<td>5.277
+<td>8.402
 </tr>
 <tr>
 <td>BSRAM</td>
@@ -265,20 +265,20 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td>Main</td>
-<td>8.938</td>
-<td>8.938(8.930)</td>
+<td>9.018</td>
+<td>9.018(9.004)</td>
 <tr>
 <td>Main/CHRGENROM/</td>
 <td>0.158</td>
 <td>0.158(0.000)</td>
 <tr>
 <td>Main/CPU/</td>
-<td>0.521</td>
-<td>0.521(0.515)</td>
+<td>0.604</td>
+<td>0.604(0.597)</td>
 <tr>
 <td>Main/CPU/u0/</td>
-<td>0.515</td>
-<td>0.515(0.056)</td>
+<td>0.597</td>
+<td>0.597(0.057)</td>
 <tr>
 <td>Main/CPU/u0/Regs/</td>
 <td>0.007</td>
@@ -289,8 +289,8 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>0.009(0.000)</td>
 <tr>
 <td>Main/CPU/u0/mcode/</td>
-<td>0.040</td>
-<td>0.040(0.000)</td>
+<td>0.041</td>
+<td>0.041(0.000)</td>
 <tr>
 <td>Main/HDMI0/</td>
 <td>0.047</td>
@@ -317,8 +317,8 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>5.112(0.000)</td>
 <tr>
 <td>Main/SerialKeyboard/</td>
-<td>0.082</td>
-<td>0.082(0.004)</td>
+<td>0.073</td>
+<td>0.073(0.004)</td>
 <tr>
 <td>Main/SerialKeyboard/SerialUART/</td>
 <td>0.004</td>
@@ -348,14 +348,19 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <th class="label">Total Dynamic Power(mW)</th>
 </tr>
 <tr>
-<td>NO CLOCK DOMAIN</td>
-<td>0.000</td>
-<td>0.000</td>
-</tr>
-<tr>
 <td>PLLClk/rpll_inst/CLKOUTD.default_gen_clk</td>
 <td>24.975</td>
 <td>0.481</td>
+</tr>
+<tr>
+<td>LedPrescaler[2]</td>
+<td>50.000</td>
+<td>3.358</td>
+</tr>
+<tr>
+<td>CPU_INT_n</td>
+<td>50.000</td>
+<td>0.058</td>
 </tr>
 <tr>
 <td>SerialKeyboard/RX_Strobe</td>
@@ -363,19 +368,19 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>0.010</td>
 </tr>
 <tr>
-<td>CPU_INT_n</td>
-<td>50.000</td>
-<td>0.063</td>
+<td>NO CLOCK DOMAIN</td>
+<td>0.000</td>
+<td>0.000</td>
 </tr>
 <tr>
-<td>LedPrescaler[2]</td>
+<td>LED_WR_18</td>
 <td>50.000</td>
-<td>3.276</td>
+<td>0.005</td>
 </tr>
 <tr>
 <td>PLLClk/rpll_inst/CLKOUT.default_gen_clk</td>
 <td>249.750</td>
-<td>0.008</td>
+<td>0.013</td>
 </tr>
 <tr>
 <td>clkin_i</td>

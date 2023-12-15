@@ -385,7 +385,7 @@ VZVRAM_CE<='0' when (CPU_A(15 downto 0) >= "0111000000000000") and (CPU_A(15 dow
 
 Keyboard_CE <= '0' when (CPU_A(15 downto 11) >= "01101")  else '1'; --7000 to 7800 
 
-LED_WR<='0' when (CPU_A(15 downto 0) = "0111000001100000") and (CPU_WR_n='0') and CPU_MREQ_n='0' else '1'; --7060
+LED_WR<='0' when (CPU_A(7 downto 0) = "10000000") and (CPU_WR_n='0') and CPU_IOREQ_n='0' else '1'; --Port 0x80 = LEDs
 
 process (LED_WR)
 begin
@@ -393,7 +393,7 @@ begin
         LED_Latch<=CPU_DO;
     end if;
 end process;
-
+LEDs<=LED_Latch(5 downto 0) xor "111111";
 
 process (clk_cpu,CPU_MREQ_n,VZROM_CE,VZVRAM_CE,VZWRAM_CE,Keyboard_CE,VZWRAM_Data_Out,VZVRAM_Data_Out,VZROM_Data_Out)
 begin
@@ -456,8 +456,6 @@ SerialKeyboard : keyboard
        Serial_TX => open
 );
 
-LEDs(5 downto 0)<= KeyByteBuffer(5 downto 0);
---LEDs(0)<=CPU_INT_n;
 
 OSER10RESET<=Button1;
 
