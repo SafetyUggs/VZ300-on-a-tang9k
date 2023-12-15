@@ -109,7 +109,7 @@
     "SubInsts" : [
      {
       "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/Keyboard.vhd",
-      "InstLine" : 151,
+      "InstLine" : 156,
       "InstName" : "SerialUART",
       "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/uart_master/uart_master.vhd",
       "ModuleLine" : 18,

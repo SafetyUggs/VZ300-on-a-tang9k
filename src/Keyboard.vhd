@@ -50,14 +50,19 @@ process (RX_Strobe,VDP_Interrupt)
 begin
     if RX_Strobe='1' then
         TypeRateCounter<=0;
-        if ByteBuffer=X"03" then regFD(2)<='1'; regDF(2)<='1'; end if; -- 'BREAK' = ctrl + M
+        if ByteBuffer=X"03" then regFD(2)<='1'; regDF(2)<='1'; end if; -- 'BREAK' = ctrl + -
         if ByteBuffer=X"7F" then regFD(2)<='1'; regEF(5)<='1'; end if; -- 'Backspace' = ctrl + M
         if ByteBuffer=X"22" then regFB(2)<='1'; regF7(1)<='1'; end if; -- '"' = SHIFT + 2
         if ByteBuffer=X"24" then regFB(2)<='1'; regF7(5)<='1'; end if; -- '$' = SHIFT + 4
 
+        if ByteBuffer=X"3D" then regFB(2)<='1'; regDF(2)<='1'; end if; -- '=' shift -
         if ByteBuffer=X"28" then regFB(2)<='1'; regDF(3)<='1'; end if; -- '(' shift 8
         if ByteBuffer=X"29" then regFB(2)<='1'; regDF(1)<='1'; end if; -- ')' shift 9
         if ByteBuffer=X"2C" then regEF(3)<='1'; end if; -- ','
+        if ByteBuffer=X"2D" then regDF(2)<='1'; end if; -- '-'
+        if ByteBuffer=X"3B" then reg7F(4)<='1'; end if; -- ';'
+        if ByteBuffer=X"2B" then regFB(2)<='1'; reg7F(4)<='1'; end if; -- '+' SHIFT AND ;
+
 
         if ByteBuffer=X"30" then regDF(4)<='1'; end if; -- '0'
         if ByteBuffer=X"31" then regF7(4)<='1'; end if; -- '1'
@@ -104,7 +109,7 @@ begin
     else
         if falling_edge(VDP_Interrupt) and TypeRateCounter < 1000 then
             TypeRateCounter<=TypeRateCounter+1;
-            if TypeRateCounter=2 then --CLR THE KEYBOARD BUFFER AFTER 5 V-BLANK FRAMES
+            if TypeRateCounter=3 then --CLR THE KEYBOARD BUFFER AFTER 5 V-BLANK FRAMES
                 regFE<="000000";
                 regFD<="000000";
                 regFB<="000000";
@@ -119,7 +124,7 @@ begin
 end process;
 
 
-KeyData<=KeyBuffer xor "111111" when TypeRateCounter < 2 else "111111" ; --HOLD THE DATA VALID FOR 3 VBLANK FRAMES
+KeyData<=KeyBuffer xor "111111" when TypeRateCounter < 3 else "111111" ; --HOLD THE DATA VALID FOR 3 VBLANK FRAMES
 
 process (RX_Strobe, CPU_Address)
 begin

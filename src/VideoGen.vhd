@@ -67,6 +67,8 @@ process (PixelClock)
 begin
 
     if rising_edge(PixelClock) then
+      if Xcounter=0 then ChrLineBuffer<="00000000";else
+        
          if ViewPortX(2 downto 0)=0 then
             ChrLineBuffer<=CHRROMData;
             PixelValue<=ChrLineBuffer(0);
@@ -86,7 +88,7 @@ begin
             PixelValue<=ChrLineBuffer(7);
         end if;
     end if;
-
+end if;
 end process;
         
 process(PixelClock) -- These timings are mosty for the HDMI signal timing. You can change these for VGA, RGB etc.
@@ -111,7 +113,7 @@ begin --
         else        
             Vsync<='0';
         end if;
-        if Xcounter>=80 and Xcounter <80+256 then
+        if Xcounter>=80 and Xcounter <80+258 then
             HDMIActiveAreaX<='1';
             ViewPortX<=ViewPortX+1;
          else
