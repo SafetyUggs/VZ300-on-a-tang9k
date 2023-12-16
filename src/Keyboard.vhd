@@ -55,13 +55,19 @@ begin
         if ByteBuffer=X"22" then regFB(2)<='1'; regF7(1)<='1'; end if; -- '"' = SHIFT + 2
         if ByteBuffer=X"24" then regFB(2)<='1'; regF7(5)<='1'; end if; -- '$' = SHIFT + 4
 
-        if ByteBuffer=X"3D" then regFB(2)<='1'; regDF(2)<='1'; end if; -- '=' shift -
         if ByteBuffer=X"28" then regFB(2)<='1'; regDF(3)<='1'; end if; -- '(' shift 8
         if ByteBuffer=X"29" then regFB(2)<='1'; regDF(1)<='1'; end if; -- ')' shift 9
+        if ByteBuffer=X"2A" then  regFB(2)<='1'; reg7F(2)<='1'; end if; -- '*' SHIFT AND :
+        if ByteBuffer=X"2B" then regFB(2)<='1'; reg7F(4)<='1'; end if; -- '+' SHIFT AND ;
         if ByteBuffer=X"2C" then regEF(3)<='1'; end if; -- ','
         if ByteBuffer=X"2D" then regDF(2)<='1'; end if; -- '-'
+        if ByteBuffer=X"2E" then regEF(1)<='1'; end if; -- '.'
+        if ByteBuffer=X"2F" then regFB(2)<='1'; reg7F(3)<='1'; end if; -- '/' SHIFT AND k
+        if ByteBuffer=X"3A" then reg7F(2)<='1'; end if; -- ':'
         if ByteBuffer=X"3B" then reg7F(4)<='1'; end if; -- ';'
-        if ByteBuffer=X"2B" then regFB(2)<='1'; reg7F(4)<='1'; end if; -- '+' SHIFT AND ;
+        if ByteBuffer=X"3C" then regFB(2)<='1'; regEF(3)<='1'; end if; -- '<' shift ,
+        if ByteBuffer=X"3D" then regFB(2)<='1'; regDF(2)<='1'; end if; -- '=' shift -
+        if ByteBuffer=X"3E" then regFB(2)<='1'; regEF(1)<='1'; end if; -- '>' shift .
 
 
         if ByteBuffer=X"30" then regDF(4)<='1'; end if; -- '0'
@@ -76,32 +82,32 @@ begin
         if ByteBuffer=X"39" then regDF(1)<='1'; end if; -- '9'
 
 
-        if ByteBuffer=X"41" then regFD(4)<='1'; end if; -- 'A'
-        if ByteBuffer=X"42" then regFB(0)<='1'; end if; -- 'B'
-        if ByteBuffer=X"43" then regFB(3)<='1'; end if; -- 'C'
-        if ByteBuffer=X"44" then regFD(3)<='1'; end if; -- 'D'
-        if ByteBuffer=X"45" then regFE(3)<='1'; end if; -- 'E'
-        if ByteBuffer=X"46" then regFD(5)<='1'; end if; -- 'F'
-        if ByteBuffer=X"47" then regFD(0)<='1'; end if; -- 'G'
-        if ByteBuffer=X"48" then reg7F(0)<='1'; end if; -- 'H'
-        if ByteBuffer=X"49" then regBF(3)<='1'; end if; -- 'I'
-        if ByteBuffer=X"4A" then reg7F(5)<='1'; end if; -- 'J'
-        if ByteBuffer=X"4B" then reg7F(3)<='1'; end if; -- 'K'
-        if ByteBuffer=X"4C" then reg7F(1)<='1'; end if; -- 'L'
-        if ByteBuffer=X"4D" then regEF(5)<='1'; end if; -- 'M'
-        if ByteBuffer=X"4E" then regEF(0)<='1'; end if; -- 'N'
-        if ByteBuffer=X"4F" then regBF(1)<='1'; end if; -- 'O'
-        if ByteBuffer=X"50" then regBF(4)<='1'; end if; -- 'P'
-        if ByteBuffer=X"51" then regFE(4)<='1'; end if; -- 'Q'
-        if ByteBuffer=X"52" then regFE(5)<='1'; end if; -- 'R'
-        if ByteBuffer=X"53" then regFD(1)<='1'; end if; -- 'S'
-        if ByteBuffer=X"54" then regFE(0)<='1'; end if; -- 'T'
-        if ByteBuffer=X"55" then regBF(5)<='1'; end if; -- 'U'
-        if ByteBuffer=X"56" then regFB(5)<='1'; end if; -- 'V'
-        if ByteBuffer=X"57" then regFE(1)<='1'; end if; -- 'W'
-        if ByteBuffer=X"58" then regFB(1)<='1'; end if; -- 'X'
-        if ByteBuffer=X"59" then regBF(0)<='1'; end if; -- 'Y'
-        if ByteBuffer=X"5A" then regFB(4)<='1'; end if; -- 'Z'
+        if ByteBuffer=X"41" or ByteBuffer=X"61" then regFD(4)<='1'; end if; -- 'A' or 'a'
+        if ByteBuffer=X"42" or ByteBuffer=X"62" then regFB(0)<='1'; end if; -- 'B'
+        if ByteBuffer=X"43" or ByteBuffer=X"63" then regFB(3)<='1'; end if; -- 'C'
+        if ByteBuffer=X"44" or ByteBuffer=X"64" then regFD(3)<='1'; end if; -- 'D'
+        if ByteBuffer=X"45" or ByteBuffer=X"65" then regFE(3)<='1'; end if; -- 'E'
+        if ByteBuffer=X"46" or ByteBuffer=X"66" then regFD(5)<='1'; end if; -- 'F'
+        if ByteBuffer=X"47" or ByteBuffer=X"67" then regFD(0)<='1'; end if; -- 'G'
+        if ByteBuffer=X"48" or ByteBuffer=X"68" then reg7F(0)<='1'; end if; -- 'H'
+        if ByteBuffer=X"49" or ByteBuffer=X"69" then regBF(3)<='1'; end if; -- 'I'
+        if ByteBuffer=X"4A" or ByteBuffer=X"6A" then reg7F(5)<='1'; end if; -- 'J'
+        if ByteBuffer=X"4B" or ByteBuffer=X"6B" then reg7F(3)<='1'; end if; -- 'K'
+        if ByteBuffer=X"4C" or ByteBuffer=X"6C" then reg7F(1)<='1'; end if; -- 'L'
+        if ByteBuffer=X"4D" or ByteBuffer=X"6D" then regEF(5)<='1'; end if; -- 'M'
+        if ByteBuffer=X"4E" or ByteBuffer=X"6E" then regEF(0)<='1'; end if; -- 'N'
+        if ByteBuffer=X"4F" or ByteBuffer=X"6F" then regBF(1)<='1'; end if; -- 'O'
+        if ByteBuffer=X"50" or ByteBuffer=X"70" then regBF(4)<='1'; end if; -- 'P'
+        if ByteBuffer=X"51" or ByteBuffer=X"71" then regFE(4)<='1'; end if; -- 'Q'
+        if ByteBuffer=X"52" or ByteBuffer=X"72" then regFE(5)<='1'; end if; -- 'R'
+        if ByteBuffer=X"53" or ByteBuffer=X"73" then regFD(1)<='1'; end if; -- 'S'
+        if ByteBuffer=X"54" or ByteBuffer=X"74" then regFE(0)<='1'; end if; -- 'T'
+        if ByteBuffer=X"55" or ByteBuffer=X"75" then regBF(5)<='1'; end if; -- 'U'
+        if ByteBuffer=X"56" or ByteBuffer=X"76" then regFB(5)<='1'; end if; -- 'V'
+        if ByteBuffer=X"57" or ByteBuffer=X"77" then regFE(1)<='1'; end if; -- 'W'
+        if ByteBuffer=X"58" or ByteBuffer=X"78" then regFB(1)<='1'; end if; -- 'X'
+        if ByteBuffer=X"59" or ByteBuffer=X"79" then regBF(0)<='1'; end if; -- 'Y'
+        if ByteBuffer=X"5A" or ByteBuffer=X"7A" then regFB(4)<='1'; end if; -- 'Z'
 
         if ByteBuffer=X"20" then regEF(4)<='1'; end if; -- ' ' SPACE
         if ByteBuffer=X"0D" then regBF(2)<='1'; end if; -- ' ' RETURN

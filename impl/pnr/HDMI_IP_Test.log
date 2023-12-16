@@ -8,6 +8,7 @@ Running placement......
 [20%] Placement Phase 1 completed
 [30%] Placement Phase 2 completed
 WARN  (TA1117) : Can't calculate clocks' relationship between: "LedPrescaler[2]" and "PLLClk/rpll_inst/CLKOUTD.default_gen_clk"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "IOCTRL_CE" and "PLLClk/rpll_inst/CLKOUTD.default_gen_clk"
 WARN  (TA1117) : Can't calculate clocks' relationship between: "PLLClk/rpll_inst/CLKOUTD.default_gen_clk" and "CPU_INT_n"
 WARN  (TA1117) : Can't calculate clocks' relationship between: "PLLClk/rpll_inst/CLKOUTD.default_gen_clk" and "SerialKeyboard/RX_Strobe"
 [50%] Placement Phase 3 completed
@@ -28,5 +29,5 @@ Generate file "C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\impl\pnr\HDMI_IP_
 Generate file "C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\impl\pnr\HDMI_IP_Test.rpt.html" completed
 Generate file "C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\impl\pnr\HDMI_IP_Test.rpt.txt" completed
 Generate file "C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\impl\pnr\HDMI_IP_Test.tr.html" completed
-Fri Dec 15 14:06:54 2023
+Sat Dec 16 13:55:23 2023
 

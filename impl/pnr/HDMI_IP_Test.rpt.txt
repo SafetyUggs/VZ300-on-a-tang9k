@@ -12,17 +12,17 @@
   <Part Number>: GW1NR-LV9QN88PC6/I5
   <Device>: GW1NR-9
   <Device Version>: C
-  <Created Time>:Fri Dec 15 14:06:54 2023
+  <Created Time>:Sat Dec 16 13:55:22 2023
 
 
 2. PnR Details
 
   Running placement:
     Placement Phase 0: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
-    Placement Phase 1: CPU time = 0h 0m 0.052s, Elapsed time = 0h 0m 0.052s
-    Placement Phase 2: CPU time = 0h 0m 0.711s, Elapsed time = 0h 0m 0.711s
-    Placement Phase 3: CPU time = 0h 0m 9s, Elapsed time = 0h 0m 9s
-    Total Placement: CPU time = 0h 0m 11s, Elapsed time = 0h 0m 11s
+    Placement Phase 1: CPU time = 0h 0m 0.062s, Elapsed time = 0h 0m 0.061s
+    Placement Phase 2: CPU time = 0h 0m 0.804s, Elapsed time = 0h 0m 0.805s
+    Placement Phase 3: CPU time = 0h 0m 10s, Elapsed time = 0h 0m 10s
+    Total Placement: CPU time = 0h 0m 12s, Elapsed time = 0h 0m 12s
  Running routing:
     Routing Phase 0: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0.001s
     Routing Phase 1: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
@@ -30,9 +30,9 @@
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
     Total Routing: CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s
  Generate output files:
-    CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
+    CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
 
- Total Time and Memory Usage: CPU time = 0h 0m 19s, Elapsed time = 0h 0m 19s, Peak memory usage = 242MB
+ Total Time and Memory Usage: CPU time = 0h 0m 19s, Elapsed time = 0h 0m 19s, Peak memory usage = 247MB
 
 
 3. Resource Usage Summary
@@ -40,15 +40,15 @@
   ----------------------------------------------------------
   Resources                   | Usage
   ----------------------------------------------------------
-  Logic                       | 2642/8640  31%
-    --LUT,ALU,ROM16           | 2570(2323 LUT, 247 ALU, 0 ROM16)
+  Logic                       | 2802/8640  33%
+    --LUT,ALU,ROM16           | 2730(2491 LUT, 239 ALU, 0 ROM16)
     --SSRAM(RAM16)            | 12
-  Register                    | 775/6693  12%
-    --Logic Register as Latch | 43/6480  <1%
-    --Logic Register as FF    | 731/6480  12%
+  Register                    | 805/6693  13%
+    --Logic Register as Latch | 45/6480  <1%
+    --Logic Register as FF    | 759/6480  12%
     --I/O Register as Latch   | 0/213  0%
     --I/O Register as FF      | 1/213  <1%
-  CLS                         | 1686/4320  40%
+  CLS                         | 1798/4320  42%
   I/O Port                    | 18
   I/O Buf                     | 14
     --Input Buf               | 3
@@ -90,7 +90,7 @@
   -------------------------------
   Global Clock  | Usage       
   -------------------------------
-  PRIMARY       | 5/8(63%)
+  PRIMARY       | 6/8(75%)
   LW            | 4/8(50%)
   GCLK_PIN      | 2/3(67%)
   PLL           | 1/2(50%)
@@ -104,15 +104,16 @@
   -------------------------------------------
   Signal         | Global Clock   | Location
   -------------------------------------------
-  LED_WR_19      | PRIMARY        |  TL
+  LED_WR_19      | PRIMARY        |  TR TL BL
+  IOCTRL_CE      | PRIMARY        |  TR BR
   clk250mhz      | PRIMARY        |  BL
   clk25mhz       | PRIMARY        |  TR TL BR BL
   LedPrescaler[2]| PRIMARY        |  TR TL BR BL
   SerialKeyboard/RX_Strobe| PRIMARY        |  BR
   Button1_d      | LW             |  -
   HighClkPrescale| LW             |  -
+  CPU_A_14_39    | LW             |  -
   CPU_INT_n      | LW             |  -
-  CPU/u0/CPU_A_14_11| LW             |  -
   clkin_i_d      | HCLK           | BOTTOM[0]
   ===========================================
 

@@ -67,7 +67,7 @@ signal VZVRAM_CE : std_logic;
 signal Keyboard_CE : std_logic;
 signal KeyByteBuffer : std_logic_vector(5 downto 0):="111111";
 signal VZROM_Address_In : std_logic_vector(13 downto 0);
-
+signal IOCTRL_CE : std_logic;
 
 signal CPU_Reset_n: std_logic;
 signal CPU_CLK_n: std_logic;
@@ -96,6 +96,15 @@ signal VideoGen_Address : std_logic_vector(10 downto 0);
 signal VideoGen_Data : std_logic_vector(7 downto 0);
 signal CHRROM_Address : std_logic_vector(11 downto 0);
 signal CHRROM_Data : std_logic_vector(7 downto 0);
+
+signal VDC_BackgroundBit : std_logic;
+signal VDC_ModeBit : std_logic;
+signal Cassette_LSB : std_logic;
+signal Cassette_MSB : std_logic;
+signal SpeakerABit : std_logic;
+signal SpeakerBBit : std_logic;
+
+
 
 signal LED_Latch : std_logic_vector(7 downto 0);
 signal LED_WR : std_logic;
@@ -221,6 +230,8 @@ component VideoGen is
         PixelClock : in std_logic;
         CHRROMData : in std_logic_vector(7 downto 0);
         VRAMData : in std_logic_vector(7 downto 0);
+        VDC_BackgroundBit : in std_logic;
+        VDC_ModeBit : in std_logic;
 
     --Outputs\
         CHRROMAddress : out std_logic_vector(11 downto 0);
@@ -378,7 +389,7 @@ VZWRAM: VZ_WRAM
         din => CPU_DO
     );
 
-
+IOCTRL_CE<=NOT CPU_IOREQ_n when (CPU_A(15 downto 0) >= X"6800") and (CPU_A(15 downto 0) < X"7000") and CPU_WR_n='0' else '1'; --6800 to 6FFF
 VZROM_CE<=NOT CPU_IOREQ_n when CPU_A(15 downto 0) < X"4000" else '1';
 VZWRAM_CE<=NOT CPU_IOREQ_n when (CPU_A(15 downto 0) >= X"7800") and (CPU_A(15 downto 0) < X"B800") else '1'; --7800 b800
 VZVRAM_CE<=NOT CPU_IOREQ_n when (CPU_A(15 downto 0) >= X"7000") and (CPU_A(15 downto 0) < X"7800") else '1'; --7000 to 7800 
@@ -391,6 +402,19 @@ begin
         LED_Latch<=CPU_DO;
     end if;
 end process;
+process (IOCTRL_CE)
+begin
+    if rising_edge(IOCTRL_CE) then
+        VDC_BackgroundBit<=CPU_DO(4);
+        VDC_ModeBit<=CPU_DO(3);
+        SpeakerABit<=CPU_DO(0);
+        SpeakerBBit<=CPU_DO(5);
+        Cassette_MSB<=CPU_DO(2);
+        Cassette_LSB<=CPU_DO(1);
+       
+    end if;
+end process;
+
 LEDs<=LED_Latch(5 downto 0) xor "111111";
 
 process (clk_cpu,CPU_MREQ_n,VZROM_CE,VZVRAM_CE,VZWRAM_CE,Keyboard_CE,VZWRAM_Data_Out,VZVRAM_Data_Out,VZROM_Data_Out)
@@ -422,6 +446,8 @@ VideoGenerator: VideoGen
         PixelClock => CLK25mhz,
         CHRROMData => CHRROM_Data,
         VRAMData => VideoGen_Data,
+        VDC_BackgroundBit => VDC_BackgroundBit,
+        VDC_ModeBit => VDC_ModeBit,
 
     --Outputs\
         CHRROMAddress=>CHRROM_Address,
