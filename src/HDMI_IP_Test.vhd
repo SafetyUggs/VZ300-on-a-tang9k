@@ -104,7 +104,8 @@ signal Cassette_MSB : std_logic;
 signal SpeakerABit : std_logic;
 signal SpeakerBBit : std_logic;
 
-
+signal AmoreAccurateClk : std_logic;
+signal AmoreAccurateClkCounter : integer;
 
 signal LED_Latch : std_logic_vector(7 downto 0);
 signal LED_WR : std_logic;
@@ -290,7 +291,7 @@ SerialOut<=SerialIn;
 
 SysReset<=Button1;
 
-cpu_clk<=LedPrescaler(2); --CHANGE YOUR CPU CLOCK SPEED HERE. 
+cpu_clk<=AmoreAccurateClk;--LedPrescaler(2); --CHANGE YOUR CPU CLOCK SPEED HERE. 
 
 
 CPU: T80se
@@ -528,6 +529,8 @@ process (clk250mhz)
 begin   
     if rising_edge(clk250mhz) then
         HighClkPrescale<=not HighClkPrescale; --This hdmi core needs  125mhz clk but the PLL couldn't get it on the dot, we we're using 250mhz /2
+        AmoreAccurateClkCounter<=AmoreAccurateClkCounter+1;
+        if AmoreAccurateClkCounter >=35 then AmoreAccurateClk<=not AmoreAccurateClk;AmoreAccurateClkCounter<=0; end if;
     end if;
 end process;
 

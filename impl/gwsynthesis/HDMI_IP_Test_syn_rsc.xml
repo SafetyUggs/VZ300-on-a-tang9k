@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="Main" Register="85" Alu="68" Lut="280">
+<Module name="Main" Register="115" Alu="99" Lut="282">
  <SubModule name="CPU" Register="12" Lut="41">
-  <SubModule name="u0" Register="444" Alu="70" Lut="1451" Bsram="1">
-   <SubModule name="mcode" Lut="323"/>
-   <SubModule name="alu" Alu="7" Lut="21"/>
+  <SubModule name="u0" Register="444" Alu="70" Lut="1421" Bsram="1">
+   <SubModule name="mcode" Lut="310"/>
+   <SubModule name="alu" Alu="7" Lut="17"/>
    <SubModule name="Regs" Ssram="12"/>
   </SubModule>
  </SubModule>
@@ -13,7 +13,7 @@
  <SubModule name="VZWRAM" Bsram="8"/>
  <SubModule name="VideoGenerator" Register="72" Alu="25" Lut="79"/>
  <SubModule name="SerialKeyboard" Register="167" Alu="31" Lut="266">
-  <SubModule name="SerialUART" Register="25" Lut="41"/>
+  <SubModule name="SerialUART" Register="25" Lut="42"/>
  </SubModule>
  <SubModule name="PLLClk"/>
 </Module>

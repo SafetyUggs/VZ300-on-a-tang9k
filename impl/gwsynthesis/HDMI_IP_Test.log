@@ -9,18 +9,18 @@ Analyzing architecture 'behavioral'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-ta
 Analyzing VHDL file 'C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd'
 Analyzing entity 'main'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":10)
 Analyzing architecture 'behavioral'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":29)
-WARN  (EX4557) : Actual for formal port 'oce' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":324)
-WARN  (EX4557) : Actual for formal port 'reset' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":326)
-WARN  (EX4557) : Actual for formal port 'reset' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":354)
-WARN  (EX4557) : Actual for formal port 'ocea' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":363)
-WARN  (EX4557) : Actual for formal port 'cea' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":364)
-WARN  (EX4557) : Actual for formal port 'reseta' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":365)
-WARN  (EX4557) : Actual for formal port 'wrea' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":366)
-WARN  (EX4557) : Actual for formal port 'resetb' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":370)
-WARN  (EX4557) : Actual for formal port 'oce' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":384)
-WARN  (EX4557) : Actual for formal port 'ce' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":385)
-WARN  (EX4557) : Actual for formal port 'reset' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":386)
-WARN  (EX4557) : Actual for formal port 'wre' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":387)
+WARN  (EX4557) : Actual for formal port 'oce' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":325)
+WARN  (EX4557) : Actual for formal port 'reset' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":327)
+WARN  (EX4557) : Actual for formal port 'reset' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":355)
+WARN  (EX4557) : Actual for formal port 'ocea' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":364)
+WARN  (EX4557) : Actual for formal port 'cea' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":365)
+WARN  (EX4557) : Actual for formal port 'reseta' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":366)
+WARN  (EX4557) : Actual for formal port 'wrea' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":367)
+WARN  (EX4557) : Actual for formal port 'resetb' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":371)
+WARN  (EX4557) : Actual for formal port 'oce' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":385)
+WARN  (EX4557) : Actual for formal port 'ce' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":386)
+WARN  (EX4557) : Actual for formal port 'reset' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":387)
+WARN  (EX4557) : Actual for formal port 'wre' is neither a static name nor a globally static expression("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":388)
 Analyzing VHDL file 'C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VZ_VRAM\VZ_VRAM.vhd'
 Analyzing entity 'vz_vram'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VZ_VRAM\VZ_VRAM.vhd":13)
 Analyzing architecture 'behavioral'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VZ_VRAM\VZ_VRAM.vhd":34)
@@ -92,9 +92,9 @@ Processing 'VZROM(Behavioral)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\
 Processing 'CHRROM(Behavioral)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\CHRROM\CHRROM.vhd":13)
 Processing 'VZ_VRAM(Behavioral)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VZ_VRAM\VZ_VRAM.vhd":13)
 Processing 'VZ_WRAM(Behavioral)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VZ_WRAM\VZ_WRAM.vhd":13)
-WARN  (EX4749) : 'cpu_rd_n' should be on the sensitivity list of the process. Signal missing is added and assuming complete sensitivity list specified. RTL design and post-synthesis netlist simulations may differ as a result("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":422)
-WARN  (EX4749) : 'keybytebuffer' should be on the sensitivity list of the process. Signal missing is added and assuming complete sensitivity list specified. RTL design and post-synthesis netlist simulations may differ as a result("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":432)
-WARN  (EX4387) : Incomplete sensitivity list specified, assuming completeness("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":439)
+WARN  (EX4749) : 'cpu_rd_n' should be on the sensitivity list of the process. Signal missing is added and assuming complete sensitivity list specified. RTL design and post-synthesis netlist simulations may differ as a result("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":423)
+WARN  (EX4749) : 'keybytebuffer' should be on the sensitivity list of the process. Signal missing is added and assuming complete sensitivity list specified. RTL design and post-synthesis netlist simulations may differ as a result("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":433)
+WARN  (EX4387) : Incomplete sensitivity list specified, assuming completeness("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd":440)
 Processing 'VideoGen(Behavioral)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VideoGen.vhd":7)
 Processing 'Keyboard(Behavioral)'("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\Keyboard.vhd":7)
 WARN  (EX4749) : 'bytebuffer' should be on the sensitivity list of the process. Signal missing is added and assuming complete sensitivity list specified. RTL design and post-synthesis netlist simulations may differ as a result("C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\Keyboard.vhd":53)
@@ -263,7 +263,6 @@ Running technical mapping ...
 [95%] Generate netlist file "C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\impl\gwsynthesis\HDMI_IP_Test.vg" completed
 WARN  (CK3000) : Can't calculate clocks' relationship between: "IOCTRL_CE_6" and "PLLClk/rpll_inst/CLKOUTD.default_gen_clk"
 WARN  (CK3000) : Can't calculate clocks' relationship between: "VideoGenerator/n168_6" and "PLLClk/rpll_inst/CLKOUTD.default_gen_clk"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "LedPrescaler[2]_3" and "PLLClk/rpll_inst/CLKOUTD.default_gen_clk"
 WARN  (CK3000) : Can't calculate clocks' relationship between: "PLLClk/rpll_inst/CLKOUTD.default_gen_clk" and "VideoGenerator/n168_6"
 WARN  (CK3000) : Can't calculate clocks' relationship between: "PLLClk/rpll_inst/CLKOUTD.default_gen_clk" and "VideoGenerator/CPU_INT_n_4"
 WARN  (CK3000) : Can't calculate clocks' relationship between: "PLLClk/rpll_inst/CLKOUTD.default_gen_clk" and "SerialKeyboard/SerialUART/RX_Strobe_2"
