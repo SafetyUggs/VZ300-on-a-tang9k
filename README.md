@@ -11,6 +11,7 @@ speed. V-Blank interrupt is ~59.9hz.
 VDP supports mode 0 and mode 1.
 
 To do: Move VZROM and VZDOS to user flash to free up more SRAM, SD card 
-support, VZDOS, Disk Drive Emulation, German Graphics Mod
+support, VZDOS, Disk Drive Emulation, German Graphics Mod, full screen
+scaling.
 
  

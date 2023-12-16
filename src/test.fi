@@ -1,0 +1,21 @@
+//Copyright (C)2014-2023 Gowin Semiconductor Corporation.
+//All rights reserved.
+//File Title: User Flash Initialization File
+//GOWIN Version: V1.9.9Beta-4 Education
+//Part Number: GW1NR-LV9QN88PC6/I5
+//Device-package: GW1NR-9C-QFN88P
+//Device Version: C
+//Flash Type: FLASH608K
+//File Format: Hex
+//Created Time: 2023-12-16 18:31:41
+[0:0] 12345670
+[0:1] 000055AF
+[0:2] 0000E732
+[0:3] 00001800
+[0:4] 0000F368
+[0:5] 000021C3
+[0:6] 0000E974
+[0:7] 00007A06
+[0:8] 000022C3
+[0:A] 0000A400
+

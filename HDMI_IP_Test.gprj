@@ -5,7 +5,7 @@
     <Version>5</Version>
     <Device name="GW1NR-9C" pn="GW1NR-LV9QN88PC6/I5">gw1nr9c-004</Device>
     <FileList>
-        <File path="src/BASIC20/VZROM.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/BASIC20/VZROM.vhd" type="file.vhdl" enable="0"/>
         <File path="src/CHRROM/CHRROM.vhd" type="file.vhdl" enable="1"/>
         <File path="src/HDMI_IP_Test.vhd" type="file.vhdl" enable="1"/>
         <File path="src/Keyboard.vhd" type="file.vhdl" enable="1"/>
@@ -13,8 +13,10 @@
         <File path="src/VZ_WRAM/VZ_WRAM.vhd" type="file.vhdl" enable="1"/>
         <File path="src/VideoGen.vhd" type="file.vhdl" enable="1"/>
         <File path="src/dvi_tx/dvi_tx.vhd" type="file.vhdl" enable="1"/>
-        <File path="src/gowin_flash_controller/gowin_flash_controller.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/gowin_flash_controller/gowin_flash_controller.vhd" type="file.vhdl" enable="0"/>
         <File path="src/gowin_rpll/gowin_rpll.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/gowin_sp/DOSRAM.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/gowin_user_flash/ROMs.vhd" type="file.vhdl" enable="1"/>
         <File path="src/t80/T80.vhd" type="file.vhdl" enable="1"/>
         <File path="src/t80/T80_ALU.vhd" type="file.vhdl" enable="1"/>
         <File path="src/t80/T80_MCode.vhd" type="file.vhdl" enable="1"/>

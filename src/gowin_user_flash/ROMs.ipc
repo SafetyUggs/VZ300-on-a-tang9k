@@ -1,0 +1,10 @@
+[General]
+ipc_version=4
+file=ROMs
+module=ROMs
+target_device=gw1nr9c-004
+type=user_flash
+version=3.0
+
+[Config]
+LANG=1

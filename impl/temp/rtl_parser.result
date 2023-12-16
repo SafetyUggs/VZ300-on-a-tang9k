@@ -9,7 +9,7 @@
   "SubInsts" : [
    {
     "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
-    "InstLine" : 491,
+    "InstLine" : 651,
     "InstName" : "HDMI0",
     "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/dvi_tx/dvi_tx.vhd",
     "ModuleLine" : 1,
@@ -17,7 +17,7 @@
    },
    {
     "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
-    "InstLine" : 297,
+    "InstLine" : 355,
     "InstName" : "CPU",
     "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/t80/T80se.vhd",
     "ModuleLine" : 67,
@@ -61,15 +61,23 @@
    },
    {
     "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
-    "InstLine" : 321,
-    "InstName" : "VZVROM",
-    "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/BASIC20/VZROM.vhd",
+    "InstLine" : 379,
+    "InstName" : "VZDOSandROM",
+    "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/gowin_user_flash/ROMs.vhd",
     "ModuleLine" : 13,
-    "ModuleName" : "VZROM"
+    "ModuleName" : "ROMs"
    },
    {
     "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
-    "InstLine" : 349,
+    "InstLine" : 394,
+    "InstName" : "DOS_RAM",
+    "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/gowin_sp/DOSRAM.vhd",
+    "ModuleLine" : 13,
+    "ModuleName" : "DOSRAM"
+   },
+   {
+    "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
+    "InstLine" : 408,
     "InstName" : "CHRGENROM",
     "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/CHRROM/CHRROM.vhd",
     "ModuleLine" : 13,
@@ -77,7 +85,7 @@
    },
    {
     "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
-    "InstLine" : 359,
+    "InstLine" : 418,
     "InstName" : "VZVRAM",
     "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/VZ_VRAM/VZ_VRAM.vhd",
     "ModuleLine" : 13,
@@ -85,7 +93,7 @@
    },
    {
     "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
-    "InstLine" : 381,
+    "InstLine" : 440,
     "InstName" : "VZWRAM",
     "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/VZ_WRAM/VZ_WRAM.vhd",
     "ModuleLine" : 13,
@@ -93,7 +101,7 @@
    },
    {
     "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
-    "InstLine" : 445,
+    "InstLine" : 603,
     "InstName" : "VideoGenerator",
     "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/VideoGen.vhd",
     "ModuleLine" : 7,
@@ -101,7 +109,7 @@
    },
    {
     "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
-    "InstLine" : 470,
+    "InstLine" : 628,
     "InstName" : "SerialKeyboard",
     "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/Keyboard.vhd",
     "ModuleLine" : 7,
@@ -119,7 +127,7 @@
    },
    {
     "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
-    "InstLine" : 509,
+    "InstLine" : 669,
     "InstName" : "PLLClk",
     "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/gowin_rpll/gowin_rpll.vhd",
     "ModuleLine" : 13,

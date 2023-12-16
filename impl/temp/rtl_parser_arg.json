@@ -3,11 +3,6 @@
  "Files" : [
   {
    "Library" : "work",
-   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/BASIC20/VZROM.vhd",
-   "Type" : "vhdl"
-  },
-  {
-   "Library" : "work",
    "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/CHRROM/CHRROM.vhd",
    "Type" : "vhdl"
   },
@@ -73,17 +68,22 @@
   },
   {
    "Library" : "work",
-   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/gowin_flash_controller/gowin_flash_controller.vhd",
-   "Type" : "vhdl"
-  },
-  {
-   "Library" : "work",
    "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/Keyboard.vhd",
    "Type" : "vhdl"
   },
   {
    "Library" : "work",
    "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/uart_master/uart_master.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/gowin_user_flash/ROMs.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/gowin_sp/DOSRAM.vhd",
    "Type" : "vhdl"
   }
  ],

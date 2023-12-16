@@ -17,6 +17,12 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
         SerialIn : in std_logic;
         SerialOut : out std_logic;
 
+        BoardReset : in std_logic;
+
+        SD_I : in std_logic;
+		SD_O : out std_logic;
+		SD_CS : out std_logic;
+		SD_Clk : out std_logic;
 
         O_tmds_clk_p_o: out  std_logic;
         O_tmds_clk_n_o: out  std_logic;
@@ -56,12 +62,18 @@ signal HDMIActiveArea : std_logic;
 
 signal OSER10RESET : std_logic;
 
-
+signal SD_Buffer : std_logic_vector(7 downto 0);
+SIGNAL userFlashDout : std_logic_vector(31 downto 0);
 signal VZROM_Data_Out : std_logic_vector(7 downto 0);
+signal DOSRAM_Data_Out : std_logic_vector(7 downto 0);
+signal VZDOS_Data_Out : std_logic_vector(7 downto 0);
 signal VZVRAM_Data_Out : std_logic_vector(7 downto 0);
 signal VZWRAM_Data_Out : std_logic_vector(7 downto 0);
 signal cpu_clk : std_logic;
+signal SDport_CE : std_logic;
 signal VZROM_CE : std_logic;
+signal DOSRAM_CE : std_logic;
+signal VZDOS_CE : std_logic;
 signal VZWRAM_CE : std_logic;
 signal VZVRAM_CE : std_logic;
 signal Keyboard_CE : std_logic;
@@ -109,6 +121,38 @@ signal AmoreAccurateClkCounter : integer;
 
 signal LED_Latch : std_logic_vector(7 downto 0);
 signal LED_WR : std_logic;
+
+--------SD card stuff
+signal PortSDconfigOut : std_logic;
+signal PortSDin : std_logic;
+signal PortSDout : std_logic;
+signal PortMapperOut : std_logic;
+signal PortRAMmapOut : std_logic;
+
+---------------SPI Signals
+signal SPIinBuffer  : std_logic_vector (7 downto 0);
+
+signal SPIoutBuffer : std_logic_vector (7 downto 0);
+signal SPIBuffer		: std_logic_vector (7 downto 0);
+signal SPIclkCount  : std_logic_vector (3 downto 0):="0000"; 
+signal SPIclkEn	  : std_logic:='0';
+signal SPISDcs		  : std_logic:='1';
+signal SPI_bank_clk  : std_logic;
+signal SPI_bank_Buff_clk : std_logic;
+signal SPI_Readback_clk : std_logic;
+signal SPItrigger : std_logic;
+signal SPICLOCK : std_logic;
+signal SPIclkSpeed : std_logic;
+signal SD_Or : std_logic;
+signal SPIAddressAccess : std_logic:='1';
+signal State : std_logic_vector(1 downto 0);
+signal CLKPreScale : std_logic_vector(7 downto 0);
+signal Start : std_logic;
+
+--------Constants
+
+constant SDcfgPortNumber : integer := 56;
+constant SDioPortNumber : integer := 57;
 
 component Gowin_rPLL
     port (
@@ -269,27 +313,41 @@ component Keyboard is
     );
 end component;
 
-component Gowin_Flash_Controller_Top
-	port (
-		wdata_i: in std_logic_vector(31 downto 0);
-		wyaddr_i: in std_logic_vector(5 downto 0);
-		wxaddr_i: in std_logic_vector(8 downto 0);
-		erase_en_i: in std_logic;
-		done_flag_o: out std_logic;
-		start_flag_i: in std_logic;
-		clk_i: in std_logic;
-		nrst_i: in std_logic;
-		rdata_o: out std_logic_vector(31 downto 0);
-		wr_en_i: in std_logic
-	);
+component ROMs
+    port (
+        dout: out std_logic_vector(31 downto 0);
+        xe: in std_logic;
+        ye: in std_logic;
+        se: in std_logic;
+        prog: in std_logic;
+        erase: in std_logic;
+        nvstr: in std_logic;
+        xadr: in std_logic_vector(8 downto 0);
+        yadr: in std_logic_vector(5 downto 0);
+        din: in std_logic_vector(31 downto 0)
+    );
 end component;
+component DOSRAM
+    port (
+        dout: out std_logic_vector(7 downto 0);
+        clk: in std_logic;
+        oce: in std_logic;
+        ce: in std_logic;
+        reset: in std_logic;
+        wre: in std_logic;
+        ad: in std_logic_vector(11 downto 0);
+        din: in std_logic_vector(7 downto 0)
+    );
+end component;
+
+
 
 
 
 begin
 SerialOut<=SerialIn;
 
-SysReset<=Button1;
+SysReset<=BoardReset and Button1;
 
 cpu_clk<=AmoreAccurateClk;--LedPrescaler(2); --CHANGE YOUR CPU CLOCK SPEED HERE. 
 
@@ -318,33 +376,34 @@ CPU: T80se
     );
 
 
-VZVROM: VZROM
-   port map (
-        dout => VZROM_Data_Out,
-        clk => cpu_clk,
-        oce => not VZROM_CE,
-        ce => '1',
-        reset => not SysReset,
-        ad => CPU_A(13 downto 0)
+VZDOSandROM: ROMs
+    port map (
+        dout(31 downto 0) => userFlashDout,--VZDOS_Data_Out & VZROM_Data_Out,
+        xe => '1',
+        ye => '1',
+        se => cpu_clk,
+        prog => '0',
+        erase => '0',
+        nvstr => '0',
+        xadr => '0'&CPU_A(13 downto 6),
+        yadr => CPU_A(5 downto 0),
+        din => X"00000000"
     );
 
 
---ROM_in_flash: Gowin_Flash_Controller_Top  --This will work, but you need to parse the basic ROM to convert it to a .fi compatible file.
---	port map (
---		wdata_i => "00000000000000000000000000000000",
---		wyaddr_i => CPU_A(14 downto 9),
---		wxaddr_i => CPU_A(8 downto 0),
---		erase_en_i => '0',
---		done_flag_o => open,
---		start_flag_i => '0',
---		clk_i => cpu_clk,
---		nrst_i => '0',
---		rdata_o(7 downto 0) => VZROM_Data_Out,
---		wr_en_i => '0'
---	);
-
-
-
+DOS_RAM: DOSRAM
+    port map (
+        dout => DOSRAM_Data_Out,
+        clk => cpu_clk,
+        oce => not CPU_RD_n,
+        ce => not DOSRAM_CE,
+        reset => '0',
+        wre => not CPU_WR_n,
+        ad => CPU_A(11 downto 0),
+        din => CPU_DO
+    );
+VZDOS_Data_Out<=userFlashDout(15 downto 8) ;
+VZROM_Data_Out<=userFlashDout(7 downto 0);
 
 CHRGENROM : CHRROM
     port map (
@@ -390,12 +449,18 @@ VZWRAM: VZ_WRAM
         din => CPU_DO
     );
 
+DOSRAM_CE<=NOT CPU_IOREQ_n when (CPU_A(15 downto 0) >= X"F000") and (CPU_A(15 downto 0) <= X"FFFF") else '1'; --f000 - ffff (ram for stack etc)
 IOCTRL_CE<=NOT CPU_IOREQ_n when (CPU_A(15 downto 0) >= X"6800") and (CPU_A(15 downto 0) < X"7000") and CPU_WR_n='0' else '1'; --6800 to 6FFF
 VZROM_CE<=NOT CPU_IOREQ_n when CPU_A(15 downto 0) < X"4000" else '1';
+VZDOS_CE<=NOT CPU_IOREQ_n when (CPU_A(15 downto 0) >= X"4000") and (CPU_A(15 downto 0) < X"6800") else '1'; --4000 6800
 VZWRAM_CE<=NOT CPU_IOREQ_n when (CPU_A(15 downto 0) >= X"7800") and (CPU_A(15 downto 0) < X"B800") else '1'; --7800 b800
 VZVRAM_CE<=NOT CPU_IOREQ_n when (CPU_A(15 downto 0) >= X"7000") and (CPU_A(15 downto 0) < X"7800") else '1'; --7000 to 7800 
-Keyboard_CE <= NOT CPU_IOREQ_n when (CPU_A(15 downto 11) >= "01101")  else '1'; --7000 to 7800 
+Keyboard_CE <= NOT CPU_IOREQ_n when (CPU_A(15 downto 11) = "01101")  else '1'; --7000 to 7800 
 LED_WR<='0' when (CPU_A(7 downto 0) = X"80") and (CPU_WR_n='0') and CPU_IOREQ_n='0' else '1'; --Port 0x80 = LEDs
+
+PortSDconfigOut <= '0' 	when CPU_IOREQ_n='0' and CPU_WR_n = '0' and CPU_A(7 downto 0) = SDcfgPortNumber else '1';
+PortSDOut <= '0' 		when CPU_IOREQ_n='0' and CPU_WR_n = '0' and CPU_A(7 downto 0) = SDioPortNumber else '1';
+PortSDIn <= '0' 		when CPU_IOREQ_n='0' and CPU_RD_n = '0' and CPU_A(7 downto 0) = SDioPortNumber else '1';
 
 process (LED_WR)
 begin
@@ -416,12 +481,37 @@ begin
     end if;
 end process;
 
+process (PortSDconfigOut)
+begin
+	
+	if rising_edge(PortSDconfigOut) then	
+				SPIclkSpeed <= CPU_DO(0); -- Low or High speed clock mode for SPI
+				SPIsdCS <= CPU_DO(1);
+		end if;
+end process;
+  
+process (PortSDOut,state)
+begin
+	if state>0 then Start<='0'; 
+		else
+			if rising_edge(PortSDout) then	
+				SPIoutBuffer <= CPU_DO;
+				Start<= '1';
+		end if;
+	end if;
+end process;
+  
+
 LEDs<=LED_Latch(5 downto 0) xor "111111";
 
-process (clk_cpu,CPU_MREQ_n,VZROM_CE,VZVRAM_CE,VZWRAM_CE,Keyboard_CE,VZWRAM_Data_Out,VZVRAM_Data_Out,VZROM_Data_Out)
+process (clk_cpu,CPU_MREQ_n,VZROM_CE,VZVRAM_CE,VZWRAM_CE,Keyboard_CE,VZWRAM_Data_Out,VZVRAM_Data_Out,VZDOS_CE,VZDOS_Data_Out,VZROM_Data_Out)
 begin
     if CPU_MREQ_n='0' and CPU_RD_n='0' then  
-        if VZROM_CE='0' then
+        if VZDOS_CE='0' then
+            CPU_DI<=VZDOS_Data_Out;
+        elsif DOSRAM_CE='0' then
+            CPU_DI<=DOSRAM_Data_Out;
+        elsif VZROM_CE='0' then
             CPU_DI<=VZROM_Data_Out;
         elsif VZVRAM_CE='0' then
             CPU_DI<=VZVRAM_Data_Out;
@@ -430,15 +520,83 @@ begin
         elsif VZWRAM_CE='0' then
             CPU_DI<=VZWRAM_Data_Out;
         elsif Keyboard_CE='0' then
-            CPU_DI<="11"& KeyByteBuffer;
+            CPU_DI<=CPU_INT_n&'1'& KeyByteBuffer;
         else
             CPU_DI<="ZZZZZZZZ";
         end if;
+    elsif PortSDIn='0' then 
+        CPU_DI<=SPIinBuffer;
     else
         CPU_DI<="ZZZZZZZZ";
     end if;
 end process;
 
+
+
+
+
+
+-----------------------------------------------------------------------
+-- Clock Generation
+-----------------------------------------------------------------------
+--All mappers common addresses
+
+
+---------------------------
+--SPI Code here:
+---------------------------
+SPIclock<=CLKprescale(7) when SPIclkSpeed='0' else cpu_clk; --Older MMC and early SD cards need a 400khz Initialisation clock. Haven't come across one yet that wont init at 1mhz
+SD_Clk<=SPIclock when State="10" and (SpiClkCount > 2) else '0'; --Enable the SPI clock when we're in state 3
+SD_CS <=  not SPIsdCS;
+
+process (cpu_clk)--Clock prescaler for System Clock
+begin
+if rising_edge(cpu_clk) then
+		ClkPrescale<=ClkPrescale+1;
+end if;
+end process;
+
+--The basics of this SPI code is: A state machine with 3 states. State 1 is idle, when it gets a trigger it sets state 2. State 2 buffers the data to be sent,
+--State 3 shifts out 8 bits, then it returns to idle state. Also while in state 3, we read back the spi data into anothe register.
+process (SPIclock,SPIClkCount,SPIoutBuffer,state)
+begin
+	if (falling_edge(SPIclock)) then
+		if State = "00" then
+			if Start='1' then
+				SPIclkCount<="0000";
+				State<="01";
+				end if;
+			end if;
+		if State="01" then 
+			SPIbuffer <= SPIoutBuffer;
+			spiclkcount<=spiclkcount+1;
+			if spiclkcount="0001" then
+				state<="10";
+				end if;
+			end if;
+		if State= "10" then --State 1=running, 0=idle
+			SPIclkCount <= SPIclkCount + 1;
+			if SPIclkCount="1010" then 
+				State<="00";
+				end if;
+			SD_O <= SPIBuffer(7);
+			SPIBuffer(7 downto 1) <= SPIBuffer(6 downto 0);
+			end if;
+		end if;
+end process;
+ 
+ 
+process (SPIclock,SPIClkCount,SPIinBuffer,state)
+begin
+	if (rising_edge(SPIclock)) then
+		if State= "10" then --State 1=running, 0=idle
+			SPIinBuffer (7 downto 1) <= SPIinBuffer (6 downto 0);
+			SPIinBuffer(0)<=SD_I;
+		end if;
+	end if;
+end process;
+ 
+   
 
 
 
@@ -480,6 +638,8 @@ SerialKeyboard : keyboard
         KeyData =>KeyByteBuffer,
        Serial_TX => open
 );
+
+
 
 
 OSER10RESET<=Button1;

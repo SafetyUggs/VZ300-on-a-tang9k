@@ -4,7 +4,6 @@
     <Version>beta</Version>
     <Device id="GW1NR-9C" package="QFN88P" speed="6" partNumber="GW1NR-LV9QN88PC6/I5"/>
     <FileList>
-        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\BASIC20\VZROM.vhd" type="vhdl"/>
         <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\CHRROM\CHRROM.vhd" type="vhdl"/>
         <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\HDMI_IP_Test.vhd" type="vhdl"/>
         <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\VZ_VRAM\VZ_VRAM.vhd" type="vhdl"/>
@@ -18,9 +17,10 @@
         <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_Pack.vhd" type="vhdl"/>
         <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80_Reg.vhd" type="vhdl"/>
         <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\t80\T80se.vhd" type="vhdl"/>
-        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\gowin_flash_controller\gowin_flash_controller.vhd" type="vhdl"/>
         <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\Keyboard.vhd" type="vhdl"/>
         <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\uart_master\uart_master.vhd" type="vhdl"/>
+        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\gowin_user_flash\ROMs.vhd" type="vhdl"/>
+        <File path="C:\Users\Ben\Documents\GitHub\VZ300-on-a-tang9k\src\gowin_sp\DOSRAM.vhd" type="vhdl"/>
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>

@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="Main" Register="115" Alu="99" Lut="282">
- <SubModule name="CPU" Register="12" Lut="41">
-  <SubModule name="u0" Register="444" Alu="70" Lut="1421" Bsram="1">
-   <SubModule name="mcode" Lut="310"/>
-   <SubModule name="alu" Alu="7" Lut="17"/>
+<Module name="Main" Register="157" Alu="106" Lut="361">
+ <SubModule name="CPU" Register="12" Lut="35">
+  <SubModule name="u0" Register="444" Alu="70" Lut="1429" Bsram="1">
+   <SubModule name="mcode" Lut="299"/>
+   <SubModule name="alu" Alu="7" Lut="18"/>
    <SubModule name="Regs" Ssram="12"/>
   </SubModule>
  </SubModule>
- <SubModule name="VZVROM" Bsram="8"/>
+ <SubModule name="VZDOSandROM"/>
+ <SubModule name="DOS_RAM" Bsram="2"/>
  <SubModule name="CHRGENROM" Bsram="2"/>
  <SubModule name="VZVRAM" Bsram="1"/>
  <SubModule name="VZWRAM" Bsram="8"/>
  <SubModule name="VideoGenerator" Register="72" Alu="25" Lut="79"/>
- <SubModule name="SerialKeyboard" Register="167" Alu="31" Lut="266">
+ <SubModule name="SerialKeyboard" Register="167" Alu="31" Lut="267">
   <SubModule name="SerialUART" Register="25" Lut="42"/>
  </SubModule>
  <SubModule name="PLLClk"/>
