@@ -7,7 +7,7 @@
 
 -mod_name Gowin_rPLL
 -file_name gowin_rpll
--path C:/Users/Ben/Documents/gowin/VZ_VideoCard/HDMI_IP_Test/src/gowin_rpll/
+-path C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/gowin_rpll/
 -type PLL
 -rPll true
 -file_type vhdl

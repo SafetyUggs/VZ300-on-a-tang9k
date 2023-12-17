@@ -7,6 +7,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity VideoGen is
     port (
     --Inputs
+        CPU_CLK : in std_logic;
         PixelClock : in std_logic;
         CHRROMData : in std_logic_vector(7 downto 0);
         VRAMData : in std_logic_vector(7 downto 0);
@@ -61,12 +62,15 @@ signal CurrentChr : std_logic_vector(8 downto 0);
 signal CurrentChrLine : std_logic_vector(2 downto 0);
 signal PixelValue : std_logic;
 
+signal ScalingCounterY : std_logic;
+signal ScalingCounterX : std_logic;
+
 
 begin
 ActiveArea<=HDMIActiveAreaX and HDMIActiveAreaY;
 VRAMAddress<='0'&ViewPortY(7 downto 3)   & ViewPortX(7 downto 3) when VDC_ModeBit='0' else ViewPortY(6 downto 1) & ViewPortX(7 downto 3);  --in gfx mode, 128 pixel are drawn, from 32 bytes of vram per line. ;
 CurrentChr<=VRAMData & '0'; 
-CurrentChrLine<=Ycounter(2 downto 0);
+CurrentChrLine<=ViewPortY(2 downto 0);
 CHRROMAddress<=CurrentChr & CurrentChrLine;  
 
 BackGroundColor<=X"00" & X"FF" & X"00" when VDC_BackgroundBit='0' else X"FF" & X"C4" & X"18"; -- R G B components of the background color in text mode FFC418 is Guy's VZEM color for 'orange'. The real buff is said to be DA A0 6D
@@ -112,7 +116,6 @@ begin
   end if;
 end process;
 
-Interrupt<='0' when  Ycounter=1 else '1' ;
 
 --GFX generator - read byte of vram, draw 4 pixels, increment byte of vram
 process (PixelClock)
@@ -172,6 +175,13 @@ begin
 end if;
 end process;
         
+process (CPU_CLK)
+begin
+    if rising_edge(cpu_clk) then
+            if Ycounter=1 then Interrupt<='0'; else Interrupt<='1';end if;
+     end if;
+end process;
+
 process(PixelClock) -- These timings are mosty for the HDMI signal timing. You can change these for VGA, RGB etc.
 begin --
     if rising_edge(PixelClock) then
@@ -179,10 +189,14 @@ begin --
         if Xcounter=800 then 
             Xcounter<="0000000000";
             Ycounter<=Ycounter+1;
-            ViewPortY<=ViewPortY+1;
+            ScalingCounterY<=not ScalingCounterY;
+            if ScalingCounterY='1' then ViewPortY<=ViewPortY+1;end if;
+        
             if Ycounter=525 then        
                 Ycounter<="0000000000";
+                ScalingCounterY<='0';
             end if;
+
         end if;
         if Xcounter>=656 and Xcounter <752 then
             Hsync<='1';
@@ -201,7 +215,7 @@ begin --
             HDMIActiveAreaX<='0';
             if VDC_ModeBit='0' then ViewPortX<="00000111"; else ViewPortX<="00000110"; end if;
         end if;
-        if  Ycounter>=24 and Ycounter<24+128 then
+        if  Ycounter>=24 and Ycounter<24+(128*2) then --x2 is scaling
             HDMIActiveAreaY<='1';
          else
             HDMIActiveAreaY<='0';

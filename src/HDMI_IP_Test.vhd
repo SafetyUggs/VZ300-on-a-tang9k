@@ -272,6 +272,7 @@ end component;
 component VideoGen is
     port (
     --Inputs
+        CPU_CLK : in std_logic;
         PixelClock : in std_logic;
         CHRROMData : in std_logic_vector(7 downto 0);
         VRAMData : in std_logic_vector(7 downto 0);
@@ -307,8 +308,7 @@ component Keyboard is
 
         Serial_RX : in std_logic;
     --Outputs\
-        KeyData : out std_logic_vector(5 downto 0);
-        Serial_TX : out std_logic
+        KeyData : out std_logic_vector(5 downto 0)
         
     );
 end component;
@@ -468,16 +468,17 @@ begin
         LED_Latch<=CPU_DO;
     end if;
 end process;
-process (IOCTRL_CE)
+process (IOCTRL_CE,cpu_clk)
 begin
-    if rising_edge(IOCTRL_CE) then
+    if rising_edge(cpu_clk) then
+      if IOCTRL_CE='0' then
         VDC_BackgroundBit<=CPU_DO(4);
         VDC_ModeBit<=CPU_DO(3);
         SpeakerABit<=CPU_DO(0);
         SpeakerBBit<=CPU_DO(5);
         Cassette_MSB<=CPU_DO(2);
         Cassette_LSB<=CPU_DO(1);
-       
+      end if;
     end if;
 end process;
 
@@ -504,7 +505,7 @@ end process;
 
 LEDs<=LED_Latch(5 downto 0) xor "111111";
 
-process (clk_cpu,CPU_MREQ_n,VZROM_CE,VZVRAM_CE,VZWRAM_CE,Keyboard_CE,VZWRAM_Data_Out,VZVRAM_Data_Out,VZDOS_CE,VZDOS_Data_Out,VZROM_Data_Out)
+process (clk_cpu,CPU_MREQ_n,VZROM_CE,VZVRAM_CE,VZWRAM_CE,Keyboard_CE,VZWRAM_Data_Out,VZVRAM_Data_Out,VZDOS_CE,VZDOS_Data_Out,VZROM_Data_Out,CPU_RD_n,DOSRAM_CE,DOSRAM_Data_Out,CPU_INT_n,SPIinBuffer,PortSDIn,KeyByteBuffer)
 begin
     if CPU_MREQ_n='0' and CPU_RD_n='0' then  
         if VZDOS_CE='0' then
@@ -602,6 +603,7 @@ end process;
 
 VideoGenerator: VideoGen
     port map (
+        CPU_CLK => CPU_CLK,
         PixelClock => CLK25mhz,
         CHRROMData => CHRROM_Data,
         VRAMData => VideoGen_Data,
@@ -635,8 +637,7 @@ SerialKeyboard : keyboard
         CLK25MHZ =>CLK25MHZ,
         Serial_RX => SerialIn,
     --Outputs\
-        KeyData =>KeyByteBuffer,
-       Serial_TX => open
+        KeyData =>KeyByteBuffer
 );
 
 

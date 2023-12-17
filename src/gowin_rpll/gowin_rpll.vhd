@@ -5,7 +5,7 @@
 --Part Number: GW1NR-LV9QN88PC6/I5
 --Device: GW1NR-9
 --Device Version: C
---Created Time: Thu Dec 14 09:41:19 2023
+--Created Time: Sun Dec 17 08:40:17 2023
 
 library IEEE;
 use IEEE.std_logic_1164.all;

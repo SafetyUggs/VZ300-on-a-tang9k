@@ -85,6 +85,11 @@
    "Library" : "work",
    "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/gowin_sp/DOSRAM.vhd",
    "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/gowin_sp2k/RAM2K.vhd",
+   "Type" : "vhdl"
   }
  ],
  "IncludePath" : [

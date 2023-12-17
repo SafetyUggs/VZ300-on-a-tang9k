@@ -9,7 +9,7 @@
   "SubInsts" : [
    {
     "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
-    "InstLine" : 651,
+    "InstLine" : 652,
     "InstName" : "HDMI0",
     "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/dvi_tx/dvi_tx.vhd",
     "ModuleLine" : 1,
@@ -101,7 +101,7 @@
    },
    {
     "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
-    "InstLine" : 603,
+    "InstLine" : 604,
     "InstName" : "VideoGenerator",
     "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/VideoGen.vhd",
     "ModuleLine" : 7,
@@ -109,7 +109,7 @@
    },
    {
     "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
-    "InstLine" : 628,
+    "InstLine" : 630,
     "InstName" : "SerialKeyboard",
     "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/Keyboard.vhd",
     "ModuleLine" : 7,
@@ -117,7 +117,7 @@
     "SubInsts" : [
      {
       "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/Keyboard.vhd",
-      "InstLine" : 162,
+      "InstLine" : 161,
       "InstName" : "SerialUART",
       "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/uart_master/uart_master.vhd",
       "ModuleLine" : 18,
@@ -127,12 +127,20 @@
    },
    {
     "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/HDMI_IP_Test.vhd",
-    "InstLine" : 669,
+    "InstLine" : 670,
     "InstName" : "PLLClk",
     "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/gowin_rpll/gowin_rpll.vhd",
     "ModuleLine" : 13,
     "ModuleName" : "Gowin_rPLL"
    }
   ]
+ },
+ {
+  "InstFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/gowin_sp2k/RAM2K.vhd",
+  "InstLine" : 13,
+  "InstName" : "RAM2K",
+  "ModuleFile" : "C:/Users/Ben/Documents/GitHub/VZ300-on-a-tang9k/src/gowin_sp2k/RAM2K.vhd",
+  "ModuleLine" : 13,
+  "ModuleName" : "RAM2K"
  }
 ]

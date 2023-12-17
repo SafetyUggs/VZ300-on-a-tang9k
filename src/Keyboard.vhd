@@ -14,8 +14,7 @@ entity Keyboard is
 
         Serial_RX : in std_logic;
     --Outputs\
-        KeyData : out std_logic_vector(5 downto 0);
-        Serial_TX : out std_logic
+        KeyData : out std_logic_vector(5 downto 0)
         
     );
 
@@ -46,7 +45,7 @@ component UART_MASTER_Top
     );
 end component;
 begin
-process (RX_Strobe,VDP_Interrupt)
+process (RX_Strobe,VDP_Interrupt,ByteBuffer,TypeRateCounter)
 begin
     if RX_Strobe='1' then
         TypeRateCounter<=0;
@@ -132,7 +131,7 @@ end process;
 
 KeyData<=KeyBuffer xor "111111" when TypeRateCounter < 3 else "111111" ; --HOLD THE DATA VALID FOR 3 VBLANK FRAMES
 
-process (RX_Strobe, CPU_Address)
+process (RX_Strobe, CPU_Address,RegFE,RegFD,RegFB,RegF7,RegEF,RegDF,RegBF,Reg7F)
 begin
     if CPU_Address(7 downto 0)=X"FE" then
         KeyBuffer<=RegFE;
